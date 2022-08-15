@@ -1,4 +1,4 @@
-package com.tv_series;
+package com.rntvseries;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "tv_series";
+    return "rnTvSeries";
   }
 
   /**

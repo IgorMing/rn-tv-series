@@ -1,4 +1,4 @@
-package com.tv_series.newarchitecture.components;
+package com.rntvseries.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

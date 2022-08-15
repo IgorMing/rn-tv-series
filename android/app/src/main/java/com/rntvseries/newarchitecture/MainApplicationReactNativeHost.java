@@ -1,4 +1,4 @@
-package com.tv_series.newarchitecture;
+package com.rntvseries.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.tv_series.BuildConfig;
-import com.tv_series.newarchitecture.components.MainComponentsRegistry;
-import com.tv_series.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.rntvseries.BuildConfig;
+import com.rntvseries.newarchitecture.components.MainComponentsRegistry;
+import com.rntvseries.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "tv_series.app"
-               BlueprintName = "tv_series"
-               ReferencedContainer = "container:tv_series.xcodeproj">
+               BuildableName = "rnTvSeries.app"
+               BlueprintName = "rnTvSeries"
+               ReferencedContainer = "container:rnTvSeries.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "tv_seriesTests.xctest"
-               BlueprintName = "tv_seriesTests"
-               ReferencedContainer = "container:tv_series.xcodeproj">
+               BuildableName = "rnTvSeriesTests.xctest"
+               BlueprintName = "rnTvSeriesTests"
+               ReferencedContainer = "container:rnTvSeries.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "tv_series.app"
-            BlueprintName = "tv_series"
-            ReferencedContainer = "container:tv_series.xcodeproj">
+            BuildableName = "rnTvSeries.app"
+            BlueprintName = "rnTvSeries"
+            ReferencedContainer = "container:rnTvSeries.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "tv_series.app"
-            BlueprintName = "tv_series"
-            ReferencedContainer = "container:tv_series.xcodeproj">
+            BuildableName = "rnTvSeries.app"
+            BlueprintName = "rnTvSeries"
+            ReferencedContainer = "container:rnTvSeries.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
