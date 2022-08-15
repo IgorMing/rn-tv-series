@@ -1,12 +1,15 @@
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider } from '@ui-kitten/components';
 import React from 'react';
-import { SafeAreaView, StatusBar, Text } from 'react-native';
+import { StatusBar } from 'react-native';
+import Home from './src/screens/Home';
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <ApplicationProvider {...eva} theme={eva.light}>
       <StatusBar barStyle={'light-content'} />
-      <Text>Testing...</Text>
-    </SafeAreaView>
+      <Home />
+    </ApplicationProvider>
   );
 };
 
