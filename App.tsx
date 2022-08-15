@@ -6,7 +6,7 @@ import Home from './src/screens/Home';
 
 const App = () => {
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
+    <ApplicationProvider {...eva} theme={eva.dark}>
       <StatusBar barStyle={'light-content'} />
       <Home />
     </ApplicationProvider>

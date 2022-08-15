@@ -13,6 +13,7 @@
     "@eva-design/eva": "^2.1.1",
     "@ui-kitten/components": "^5.1.2",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
     "react": "18.0.0",
     "react-native": "0.69.4",
     "react-native-svg": "^12.4.4"
