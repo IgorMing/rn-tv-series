@@ -3,6 +3,7 @@ import React from 'react';
 import HomeScreen from './screens/Home';
 import DetailsScreen from './screens/Details';
 import { useTheme } from '@ui-kitten/components';
+import { getSearchbarOptions } from './screens/helpers';
 
 export type StackParamList = {
   Home: undefined;
@@ -27,15 +28,7 @@ const Routes: React.FC = () => {
         component={HomeScreen}
         options={{
           title: 'TV Series Browser',
-          headerSearchBarOptions: {
-            autoCapitalize: 'sentences',
-            disableBackButtonOverride: false,
-            headerIconColor: theme['text-disabled-color'],
-            inputType: 'text',
-            placeholder: 'Search for a TV show',
-            hintTextColor: theme['text-disabled-color'],
-            textColor: theme['text-basic-color'],
-          },
+          headerSearchBarOptions: { ...getSearchbarOptions(theme) },
         }}
       />
       <Stack.Screen name="Details" component={DetailsScreen} />

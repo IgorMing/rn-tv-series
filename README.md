@@ -11,7 +11,8 @@ An app made in React Native, that exposes all TV series.
 - [x] configure navigation
 - [x] integrate the navigation library with the UI Kitten's navigation's approach
 - [x] add search UI
-- [ ] make search works
+- [x] handle the search text with debounce
+- [ ] request the proper endpoint to get the correct data after searching
 
 ## Extras
 
@@ -29,7 +30,11 @@ An app made in React Native, that exposes all TV series.
   - Just wondered if I might add styled-components, but I think it's not necessary
 
 - Code organization
+
   - I've decided to keep styles, interfaces/types and component in the same file, for making easier to find where everything is placed
+
+- Debounce
+  - For debounce, I tried lodash.debounce first, but after couple problems in the codebase using it and spiking out a hook for caring about that, I decided to install the use-debounce library.
 
 ## Informative
 
