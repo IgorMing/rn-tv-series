@@ -9,8 +9,9 @@ An app made in React Native, that exposes all TV series.
 - [x] fetch the list of shows and show the basic into the screen
 - [x] add more details on each list's card
 - [x] configure navigation
-- [ ] integrate the navigation library with the UI Kitten's navigation's approach
-- [ ] add search
+- [x] integrate the navigation library with the UI Kitten's navigation's approach
+- [x] add search UI
+- [ ] make search works
 
 ## Extras
 
@@ -29,3 +30,7 @@ An app made in React Native, that exposes all TV series.
 
 - Code organization
   - I've decided to keep styles, interfaces/types and component in the same file, for making easier to find where everything is placed
+
+## Informative
+
+- Considering that the challange doc's title is "Android challenge", I put all my attention on the Android build. Of course it does work in both platforms, but **maybe** in iOS we could find some minor UI issues.

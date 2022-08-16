@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Layout } from '@ui-kitten/components';
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, SafeAreaView } from 'react-native';
 import ShowCard from '../components/ShowCard';
 import { useShows } from '../features/show/hook';
 import { StackParamList } from '../routes';
@@ -12,18 +12,20 @@ const HomeScreen: React.FC<HomeProps> = ({ navigation }) => {
   const { data } = useShows();
 
   return (
-    <Layout>
-      <FlatList
-        data={data}
-        numColumns={2}
-        renderItem={({ item }) => (
-          <ShowCard
-            item={item}
-            onPress={id => navigation.navigate('Details', { id })}
-          />
-        )}
-      />
-    </Layout>
+    <SafeAreaView>
+      <Layout>
+        <FlatList
+          data={data}
+          numColumns={2}
+          renderItem={({ item }) => (
+            <ShowCard
+              item={item}
+              onPress={id => navigation.navigate('Details', { id })}
+            />
+          )}
+        />
+      </Layout>
+    </SafeAreaView>
   );
 };
 
