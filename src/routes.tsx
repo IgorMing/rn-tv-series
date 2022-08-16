@@ -3,7 +3,7 @@ import React from 'react';
 import HomeScreen from './screens/Home';
 import DetailsScreen from './screens/Details';
 import { useTheme } from '@ui-kitten/components';
-import { getSearchbarOptions } from './screens/helpers';
+import { getSearchbarOptions } from './helpers';
 
 export type StackParamList = {
   Home: undefined;

@@ -6,7 +6,7 @@ import { useDebounce } from 'use-debounce';
 import ShowCard from '../components/ShowCard';
 import { useShows } from '../features/show/hook';
 import { StackParamList } from '../routes';
-import { getSearchbarOptions } from './helpers';
+import { getSearchbarOptions } from '../helpers';
 
 type HomeProps = NativeStackScreenProps<StackParamList, 'Home'>;
 
