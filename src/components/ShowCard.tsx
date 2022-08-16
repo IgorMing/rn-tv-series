@@ -6,13 +6,14 @@ import { Show } from '../features/show/model';
 
 interface ShowCardProps {
   item: Show;
+  onPress(id: number): void;
 }
 
-const ShowCard: React.FC<ShowCardProps> = ({ item }) => {
+const ShowCard: React.FC<ShowCardProps> = ({ item, onPress }) => {
   const styles = useStyleSheet(themedStyles);
 
   return (
-    <Card style={styles.full}>
+    <Card style={styles.full} onPress={() => onPress(item.id)}>
       <Image
         source={{ uri: item.image.medium ?? item.image.original }}
         style={styles.cardImage as ImageStyle}

@@ -8,8 +8,13 @@ An app made in React Native, that exposes all TV series.
 - [x] spike out the api
 - [x] fetch the list of shows and show the basic into the screen
 - [x] add more details on each list's card
-- [ ] configure navigation
+- [x] configure navigation
 - [ ] integrate the navigation library with the UI Kitten's navigation's approach
+- [ ] add search
+
+## Extras
+
+- [ ] Hero animation after clicking onto an item on the list (with [shared elements](https://github.com/IjzerenHein/react-native-shared-element) library)
 
 ## Decisions while working
 
@@ -24,7 +29,3 @@ An app made in React Native, that exposes all TV series.
 
 - Code organization
   - I've decided to keep styles, interfaces/types and component in the same file, for making easier to find where everything is placed
-
-## Extra
-
-- [ ] Hero animation after clicking onto an item on the list (with [shared elements](https://github.com/IjzerenHein/react-native-shared-element) library)
