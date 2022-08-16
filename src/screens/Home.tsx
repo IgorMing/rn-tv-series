@@ -1,38 +1,33 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Layout, useTheme } from '@ui-kitten/components';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FlatList, SafeAreaView } from 'react-native';
-import { useDebounce } from 'use-debounce';
 import ShowCard from '../components/ShowCard';
 import { useShows } from '../features/show/hook';
-import { StackParamList } from '../routes';
 import { getSearchbarOptions } from '../helpers';
+import { StackParamList } from '../routes';
 
 type HomeProps = NativeStackScreenProps<StackParamList, 'Home'>;
 
 const HomeScreen: React.FC<HomeProps> = ({ navigation }) => {
   const theme = useTheme();
-  const [search, setSearch] = useState('');
-  const [debouncedSearch] = useDebounce(search, 1000);
 
-  const { data } = useShows();
+  const { filteredData, setQuery } = useShows();
 
   useEffect(() => {
     navigation.setOptions({
       headerSearchBarOptions: {
         ...getSearchbarOptions(theme),
-        onChangeText: event => setSearch(event.nativeEvent.text),
+        onChangeText: event => setQuery(event.nativeEvent.text),
       },
     });
-  }, [navigation, theme]);
-
-  console.log(debouncedSearch);
+  }, [navigation, setQuery, theme]);
 
   return (
     <SafeAreaView>
       <Layout>
         <FlatList
-          data={data}
+          data={filteredData}
           numColumns={2}
           renderItem={({ item }) => (
             <ShowCard

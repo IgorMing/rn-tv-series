@@ -12,18 +12,21 @@ An app made in React Native, that exposes all TV series.
 - [x] integrate the navigation library with the UI Kitten's navigation's approach
 - [x] add search UI
 - [x] handle the search text with debounce
-- [ ] request the proper endpoint to get the correct data after searching
+- [x] request the proper endpoint to get the correct data after searching
+- [ ] add loading after searching
 
 ## Extras
 
+- [ ] list with infinite loading behavior
 - [ ] Hero animation after clicking onto an item on the list (with [shared elements](https://github.com/IjzerenHein/react-native-shared-element) library)
 
 ## Decisions while working
 
 - State Management
 
-  - I've decided to keep it simple, just using custom hooks + context API for sharing the data.
+  - I've decided to keep it simple, just using custom hooks + context API _(if needed)_ for sharing the data.
   - Of course I know the importance of an usage of a third part library for managing this, but I think it's better applicable for bigger applications. _(in other words: If the problem is simple, the solution might be simple as well)_
+  - On the second day, while working with the api queries, filtered data, etc, noticed that maybe I could add redux or recoil for managing data. But I think still worth keep going with ephemeral state in a custom hook.
 
 - CSS
 

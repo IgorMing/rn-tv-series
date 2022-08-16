@@ -14,10 +14,12 @@ const ShowCard: React.FC<ShowCardProps> = ({ item, onPress }) => {
 
   return (
     <Card style={styles.full} onPress={() => onPress(item.id)}>
-      <Image
-        source={{ uri: item.image.medium ?? item.image.original }}
-        style={styles.cardImage as ImageStyle}
-      />
+      {item.image && (
+        <Image
+          source={{ uri: item.image.medium ?? item.image.original }}
+          style={styles.cardImage as ImageStyle}
+        />
+      )}
       <Text style={styles.textStyle} numberOfLines={2}>
         {item.name}{' '}
         <Text style={styles.nestedTextStyle}>

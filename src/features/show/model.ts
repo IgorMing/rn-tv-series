@@ -32,3 +32,8 @@ export function getShowsFromJson(json: any[]): Show[] {
     schedule: each.schedule,
   }));
 }
+
+export function getNestedShowsFromJson(json: any[]): Show[] {
+  const formattedArr = json.map(each => each.show);
+  return getShowsFromJson(formattedArr);
+}
