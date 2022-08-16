@@ -6,10 +6,9 @@ import axios from '../../lib/axios';
 import { getNestedShowsFromJson, getShowsFromJson, Show } from './model';
 
 const useShows = () => {
-  // TODO: add loading
   const [query, setQuery] = useState('');
   const [debouncedSearch] = useDebounce(query, 1000);
-  const [currPage, setCurrPage] = useState<number | null>(null);
+  const [currPage, setCurrPage] = useState<number | undefined>(undefined);
 
   const [shows, setShows] = useState<Show[]>([]);
   const [showsBySearch, setShowsBySearch] = useState<Show[]>([]);
@@ -73,7 +72,7 @@ const useShows = () => {
     fetch(currPage);
   }, [currPage, fetch]);
 
-  return { setQuery, filteredData };
+  return { setSearch: setQuery, filteredData };
 };
 
 export { useShows };

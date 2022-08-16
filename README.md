@@ -14,7 +14,6 @@ An app made in React Native, that exposes all TV series.
 - [x] handle the search text with debounce
 - [x] request the proper endpoint to get the correct data after searching
 - [x] create component for empty results
-- [ ] add loading after searching
 
 ## Extras
 

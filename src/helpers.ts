@@ -1,8 +1,7 @@
+import { ThemeType } from '@ui-kitten/components';
 import { SearchBarProps } from 'react-native-screens';
 
-export function getSearchbarOptions(
-  theme: Record<string, string>,
-): SearchBarProps {
+export function getSearchbarOptions(theme: ThemeType): SearchBarProps {
   return {
     autoCapitalize: 'sentences',
     disableBackButtonOverride: false,

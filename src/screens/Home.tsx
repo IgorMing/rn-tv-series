@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
   Layout,
+  Spinner,
   StyleService,
   useStyleSheet,
   useTheme,
@@ -20,16 +21,16 @@ const HomeScreen: React.FC<HomeProps> = ({ navigation }) => {
   const theme = useTheme();
   const styles = useStyleSheet(themedStyles);
 
-  const { filteredData, setQuery } = useShows();
+  const { filteredData, setSearch } = useShows();
 
   useEffect(() => {
     navigation.setOptions({
       headerSearchBarOptions: {
         ...getSearchbarOptions(theme),
-        onChangeText: event => setQuery(event.nativeEvent.text),
+        onChangeText: event => setSearch(event.nativeEvent.text),
       },
     });
-  }, [navigation, setQuery, theme]);
+  }, [navigation, setSearch, theme]);
 
   return (
     <SafeAreaView>
