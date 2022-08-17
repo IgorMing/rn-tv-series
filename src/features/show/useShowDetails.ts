@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import axios from '../../lib/axios';
+import { Episode, getEpisodesFromJson } from '../episode/model';
 import { getShowFromJson, Show } from './model';
 import { useShowList } from './useShowList';
 
 const useShowDetails = (id: number) => {
   const [show, setShow] = useState<Show | undefined>(undefined);
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
   const [loading, setLoading] = useState(true);
   const { getShowById } = useShowList();
 
@@ -17,6 +19,21 @@ const useShowDetails = (id: number) => {
       setLoading(false);
     }
   }, [id]);
+
+  const fetchEpisodes = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`/shows/${id}/episodes`);
+      setEpisodes(getEpisodesFromJson(response.data));
+    } catch (err) {
+    } finally {
+      setLoading(false);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    fetchEpisodes();
+  }, [fetchEpisodes]);
 
   useEffect(() => {
     const inMemoryShow = getShowById(id);
@@ -31,7 +48,7 @@ const useShowDetails = (id: number) => {
     setLoading(false);
   }, [fetch, getShowById, id]);
 
-  return { data: show, loading };
+  return { data: show, loading, episodes };
 };
 
 export { useShowDetails };

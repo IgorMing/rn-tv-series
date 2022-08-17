@@ -15,12 +15,12 @@ An app made in React Native, that exposes all TV series.
 - [x] request the proper endpoint to get the correct data after searching
 - [x] create component for empty results
 - [x] create show details screen
-- [ ] add episode's list to details screen
-- [ ] create modal for showing episode details
+- [x] add episode's list to details screen
+- [ ] create modal/new screen for showing episode details
 
 ## Extras
 
-- [ ] list with infinite loading behavior
+- [x] list with infinite loading behavior
 - [ ] Hero animation after clicking onto an item on the list (with [shared elements](https://github.com/IjzerenHein/react-native-shared-element) library)
 
 ## Decisions while working
