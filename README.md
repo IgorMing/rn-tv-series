@@ -4,15 +4,44 @@ An app made in React Native, that exposes all TV series.
 
 ## Screenshots
 
-|                                                          |                                                          |                                                                |
-| :------------------------------------------------------: | :------------------------------------------------------: | -------------------------------------------------------------- |
-|     <img width="250" alt="Screen Shot 2022-08-17 at 18 01 11" src="https://user-images.githubusercontent.com/8928206/185242566-67457c42-db49-4b4c-89d7-088fb1d2ca23.png">      | <img width="250" alt="Screen Shot 2022-08-17 at 18 01 49" src="https://user-images.githubusercontent.com/8928206/185242582-08586f37-fdb6-4bc9-922c-3a2902d5726d.png"> | <img width="250" alt="Screen Shot 2022-08-17 at 18 01 59" src="https://user-images.githubusercontent.com/8928206/185242584-2c601ea9-8df5-428a-91ac-c4843f216225.png"> |
-| <img width="250" alt="Screen Shot 2022-08-17 at 18 02 09" src="https://user-images.githubusercontent.com/8928206/185242590-0a73c5a2-52e5-4d54-81fc-2a805946d364.png">  |  <img width="250" alt="Screen Shot 2022-08-17 at 18 02 16" src="https://user-images.githubusercontent.com/8928206/185242593-37a3a5e2-340c-4694-a4b2-71521cc365d7.png">  | 
-
+|                                                                                                                                                                       |                                                                                                                                                                       |                                                                                                                                                                       |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="250" alt="Screen Shot 2022-08-17 at 18 01 11" src="https://user-images.githubusercontent.com/8928206/185242566-67457c42-db49-4b4c-89d7-088fb1d2ca23.png"> | <img width="250" alt="Screen Shot 2022-08-17 at 18 01 49" src="https://user-images.githubusercontent.com/8928206/185242582-08586f37-fdb6-4bc9-922c-3a2902d5726d.png"> | <img width="250" alt="Screen Shot 2022-08-17 at 18 01 59" src="https://user-images.githubusercontent.com/8928206/185242584-2c601ea9-8df5-428a-91ac-c4843f216225.png"> |
+| <img width="250" alt="Screen Shot 2022-08-17 at 18 02 09" src="https://user-images.githubusercontent.com/8928206/185242590-0a73c5a2-52e5-4d54-81fc-2a805946d364.png"> | <img width="250" alt="Screen Shot 2022-08-17 at 18 02 16" src="https://user-images.githubusercontent.com/8928206/185242593-37a3a5e2-340c-4694-a4b2-71521cc365d7.png"> |
 
 ## Getting started
 
-First, let's clone the project
+For running this, it's super straightforward and easy.
+
+First, clone the project
+
+```shell
+$ git clone git@github.com:IgorMing/rn-tv-series.git
+```
+
+move into the project folder, and install the npm dependencies
+
+```shell
+$ yarn
+
+# or npm i
+```
+
+then, we're just ready for running it on the android platform.
+
+Let's start the bundle
+
+```shell
+$ yarn start
+```
+
+You can easily reach it by
+
+```shell
+$ yarn android
+```
+
+or as I do, which is by the Android Studio. Opening it by the `android` folder, and using the AVD from it.
 
 ## Workflow
 
