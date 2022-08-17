@@ -2,6 +2,10 @@
 
 An app made in React Native, that exposes all TV series.
 
+## Getting started
+
+First, let's clone the project
+
 ## Workflow
 
 - [x] create a bare RN project
@@ -21,7 +25,9 @@ An app made in React Native, that exposes all TV series.
 ## Extras
 
 - [x] list with infinite loading behavior
-- [ ] Hero animation after clicking onto an item on the list (with [shared elements](https://github.com/IjzerenHein/react-native-shared-element) library)
+
+- [ ] Hero animation after clicking onto an item on the list (with [react navigation shared elements](https://github.com/IjzerenHein/react-navigation-shared-element) library)
+  - I've implemented the hero animations through screen's navigations, but unforunately the lib mentioned uses the `@react-navigation/stack`, instead of the `@react-navigation/native-stack`, as I was using for the development. That contains the necessary implementation for the search that I've implemented, so for that reason, I decided to rid the animation out from the project. If you'd like to see this implementation, [here's the commit](https://github.com/IgorMing/rn-tv-series/commit/34010cbf4e762d59f5f5f971a60b372174aa0575)
 
 ## Decisions while working
 

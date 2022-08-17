@@ -35,6 +35,7 @@ const EpisodeList: React.FC<EpisodeListProps> = ({ episodes }) => {
           return completeSections[season].map(seasonEpisode => {
             return (
               <Card
+                key={seasonEpisode.id}
                 onPress={() => {
                   navigation.navigate('Episode', { episode: seasonEpisode });
                 }}>
