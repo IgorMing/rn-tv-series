@@ -40,7 +40,6 @@ const useShows = () => {
         return;
       }
 
-      console.log('fetch', page);
       const response = await axios.get(`/shows?page=${page}`);
       setCurrPage(page);
       mergeData(getShowsFromJson(response.data));
@@ -49,10 +48,8 @@ const useShows = () => {
   );
 
   const fetchByQuery = useCallback(async (q: string) => {
-    console.log('fetchByQuery', q);
     const response = await axios.get(`/search/shows?q=${q}`);
     const { data } = response;
-    console.log({ data });
     setShowsBySearch(getNestedShowsFromJson(data));
   }, []);
 
