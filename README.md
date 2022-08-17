@@ -27,7 +27,9 @@ First, let's clone the project
 - [x] list with infinite loading behavior
 
 - [ ] Hero animation after clicking onto an item on the list (with [react navigation shared elements](https://github.com/IjzerenHein/react-navigation-shared-element) library)
-  - I've implemented the hero animations through screen's navigations, but unforunately the lib mentioned uses the `@react-navigation/stack`, instead of the `@react-navigation/native-stack`, as I was using for the development. That contains the necessary implementation for the search that I've implemented, so for that reason, I decided to rid the animation out from the project. If you'd like to see this implementation, [here's the commit](https://github.com/IgorMing/rn-tv-series/commit/34010cbf4e762d59f5f5f971a60b372174aa0575)
+  - As you can see below, I've implemented the hero animations through screen's navigations, but unforunately the lib mentioned uses the `@react-navigation/stack`, instead of the `@react-navigation/native-stack`, as I was using for the development. That contains the necessary implementation for the search that I've implemented, so for that reason, I decided to rid the animation out from the project. If you'd like to see this implementation, [here's the commit](https://github.com/IgorMing/rn-tv-series/commit/34010cbf4e762d59f5f5f971a60b372174aa0575)
+
+https://user-images.githubusercontent.com/8928206/185242040-5a11e501-4713-47f8-a803-cb9b83f9a5d3.mov
 
 ## Decisions while working
 
