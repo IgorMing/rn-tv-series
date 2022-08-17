@@ -11,11 +11,12 @@ import React, { useState } from 'react';
 import { Image, ImageStyle, ScrollView, View } from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { SharedElement } from 'react-navigation-shared-element';
 import EpisodeList from '../components/EpisodeList';
 import InfoRow from '../components/InfoRow';
 import TopTabBar from '../components/TopTabBar';
 import { useShowDetails } from '../features/show/useShowDetails';
-import { removeHTMLTags, SCREEN_DIMENSIONS } from '../helpers';
+import { SCREEN_DIMENSIONS } from '../helpers';
 import { StackParamList } from '../routes';
 
 type DetailsProps = NativeStackScreenProps<StackParamList, 'Details'>;
@@ -42,11 +43,14 @@ const DetailsScreen: React.FC<DetailsProps> = ({ route }) => {
             nestedScrollEnabled
             contentContainerStyle={styles.scroll}
             showsVerticalScrollIndicator={false}>
-            <Image
-              resizeMode="cover"
-              source={{ uri: data?.image.medium ?? data?.image.original }}
-              style={styles.image as ImageStyle}
-            />
+            <SharedElement id={`item.${id}.image`}>
+              <Image
+                resizeMode="cover"
+                source={{ uri: data?.image.medium ?? data?.image.original }}
+                style={styles.image as ImageStyle}
+              />
+            </SharedElement>
+
             <View style={styles.contentContainer}>
               <InfoRow label="Name" value={data.name} />
               <InfoRow

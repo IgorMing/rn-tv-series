@@ -2,6 +2,7 @@ import { Card, StyleService, Text, useStyleSheet } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import React from 'react';
 import { Image, ImageStyle } from 'react-native';
+import { SharedElement } from 'react-navigation-shared-element';
 import { Show } from '../features/show/model';
 import { SCREEN_DIMENSIONS } from '../helpers';
 
@@ -19,10 +20,12 @@ const ShowCard: React.FunctionComponent<ShowCardProps> = ({
   return (
     <Card style={styles.full} onPress={() => onPress(item.id)}>
       {item.image && (
-        <Image
-          source={{ uri: item.image.medium ?? item.image.original }}
-          style={styles.cardImage as ImageStyle}
-        />
+        <SharedElement id={`item.${item.id}.image`}>
+          <Image
+            source={{ uri: item.image.medium ?? item.image.original }}
+            style={styles.cardImage as ImageStyle}
+          />
+        </SharedElement>
       )}
       <Text style={styles.textStyle} numberOfLines={2}>
         {item.name}{' '}

@@ -1,11 +1,11 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React from 'react';
-import HomeScreen from './screens/Home';
-import DetailsScreen from './screens/Details';
 import { useTheme } from '@ui-kitten/components';
-import { getSearchbarOptions } from './helpers';
-import EpisodeScreen from './screens/Episode';
+import React from 'react';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import { Episode } from './features/episode/model';
+import { getSearchbarOptions } from './helpers';
+import DetailsScreen from './screens/Details';
+import EpisodeScreen from './screens/Episode';
+import HomeScreen from './screens/Home';
 
 export type StackParamList = {
   Home: undefined;
@@ -13,7 +13,7 @@ export type StackParamList = {
   Episode: { episode: Episode };
 };
 
-const Stack = createNativeStackNavigator<StackParamList>();
+const Stack = createSharedElementStackNavigator<StackParamList>();
 
 const Routes: React.FC = () => {
   const theme = useTheme();
@@ -34,7 +34,14 @@ const Routes: React.FC = () => {
           headerSearchBarOptions: { ...getSearchbarOptions(theme) },
         }}
       />
-      <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
+        sharedElements={route => {
+          const { id } = route.params;
+          return [`item.${id}.image`];
+        }}
+      />
       <Stack.Screen name="Episode" component={EpisodeScreen} />
     </Stack.Navigator>
   );
