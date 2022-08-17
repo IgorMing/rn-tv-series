@@ -3,7 +3,9 @@ interface Schedule {
   days: string[];
 }
 
-export interface Show {
+type jsonType = Record<any, any>;
+
+export interface ShowAPI {
   id: number;
   name: string;
   genres: string[];
@@ -19,21 +21,29 @@ export interface Show {
   schedule: Schedule;
 }
 
-export function getShowsFromJson(json: any[]): Show[] {
-  return json.map(each => ({
-    key: each.id, // RN looks for the .key automatically during flatlist usage
-    id: each.id,
-    name: each.name,
-    genres: each.genres,
-    rating: each.rating,
-    summary: each.summary,
-    image: each.image,
-    premiered: each.premiered,
-    schedule: each.schedule,
-  }));
+export interface Show extends ShowAPI {
+  key: number;
 }
 
-export function getNestedShowsFromJson(json: any[]): Show[] {
+export function getShowFromJson(json: jsonType): Show {
+  return {
+    key: json.id, // RN looks for the .key automatically during flatlist usage
+    id: json.id,
+    name: json.name,
+    genres: json.genres,
+    rating: json.rating,
+    summary: json.summary,
+    image: json.image,
+    premiered: json.premiered,
+    schedule: json.schedule,
+  };
+}
+
+export function getShowsFromJson(json: jsonType[]): Show[] {
+  return json.map(each => ({ ...getShowFromJson(each) }));
+}
+
+export function getNestedShowsFromJson(json: jsonType[]): Show[] {
   const formattedArr = json.map(each => each.show);
   return getShowsFromJson(formattedArr);
 }

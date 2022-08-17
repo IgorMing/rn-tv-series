@@ -1,17 +1,19 @@
 import { Card, StyleService, Text, useStyleSheet } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import React from 'react';
-import { Dimensions, Image, ImageStyle } from 'react-native';
+import { Image, ImageStyle } from 'react-native';
 import { Show } from '../features/show/model';
+import { SCREEN_DIMENSIONS } from '../helpers';
 
 interface ShowCardProps {
   item: Show;
   onPress(id: number): void;
 }
 
-const SCREEN_WIDTH = Dimensions.get('screen').width;
-
-const ShowCard: React.FC<ShowCardProps> = ({ item, onPress }) => {
+const ShowCard: React.FunctionComponent<ShowCardProps> = ({
+  item,
+  onPress,
+}) => {
   const styles = useStyleSheet(themedStyles);
 
   return (
@@ -35,7 +37,7 @@ const ShowCard: React.FC<ShowCardProps> = ({ item, onPress }) => {
 const themedStyles = StyleService.create({
   full: {
     flex: 1,
-    maxWidth: SCREEN_WIDTH / 2,
+    maxWidth: SCREEN_DIMENSIONS.width / 2,
   },
   cardImage: {
     height: 250,

@@ -6,21 +6,20 @@ import {
   useTheme,
 } from '@ui-kitten/components';
 import React, { useEffect } from 'react';
-import { Dimensions, FlatList, SafeAreaView } from 'react-native';
+import { FlatList, SafeAreaView } from 'react-native';
 import EmptyLayout from '../components/EmptyLayout';
 import ShowCard from '../components/ShowCard';
-import { useShows } from '../features/show/hook';
-import { getSearchbarOptions } from '../helpers';
+import { useShowList } from '../features/show/useShowList';
+import { getSearchbarOptions, SCREEN_DIMENSIONS } from '../helpers';
 import { StackParamList } from '../routes';
 
 type HomeProps = NativeStackScreenProps<StackParamList, 'Home'>;
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
 const HomeScreen: React.FC<HomeProps> = ({ navigation }) => {
   const theme = useTheme();
   const styles = useStyleSheet(themedStyles);
 
-  const { filteredData, setSearch } = useShows();
+  const { filteredData, setSearch } = useShowList();
 
   useEffect(() => {
     navigation.setOptions({
@@ -52,7 +51,7 @@ const HomeScreen: React.FC<HomeProps> = ({ navigation }) => {
 
 const themedStyles = StyleService.create({
   container: {
-    height: SCREEN_HEIGHT,
+    height: SCREEN_DIMENSIONS.height,
     justifyContent: 'center',
   },
 });

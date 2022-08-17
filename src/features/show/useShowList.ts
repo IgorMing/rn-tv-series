@@ -5,7 +5,7 @@ import { useDebounce } from 'use-debounce';
 import axios from '../../lib/axios';
 import { getNestedShowsFromJson, getShowsFromJson, Show } from './model';
 
-const useShows = () => {
+const useShowList = () => {
   const [query, setQuery] = useState('');
   const [debouncedSearch] = useDebounce(query, 1000);
   const [currPage, setCurrPage] = useState<number | undefined>(undefined);
@@ -53,6 +53,13 @@ const useShows = () => {
     setShowsBySearch(getNestedShowsFromJson(data));
   }, []);
 
+  const getShowById = useCallback(
+    (id: number): Show | undefined => {
+      return shows.find(show => show.id === id);
+    },
+    [shows],
+  );
+
   // fetch initial data
   useEffect(() => {
     fetch();
@@ -69,7 +76,7 @@ const useShows = () => {
     fetch(currPage);
   }, [currPage, fetch]);
 
-  return { setSearch: setQuery, filteredData };
+  return { setSearch: setQuery, filteredData, getShowById };
 };
 
-export { useShows };
+export { useShowList };

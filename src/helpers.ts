@@ -1,4 +1,5 @@
 import { ThemeType } from '@ui-kitten/components';
+import { Dimensions } from 'react-native';
 import { SearchBarProps } from 'react-native-screens';
 
 export function getSearchbarOptions(theme: ThemeType): SearchBarProps {
@@ -13,3 +14,9 @@ export function getSearchbarOptions(theme: ThemeType): SearchBarProps {
     textColor: theme['text-basic-color'],
   };
 }
+
+export function removeHTMLTags(text: string) {
+  return text.replace(/(<([^>]+)>)/gi, '');
+}
+
+export const SCREEN_DIMENSIONS = Dimensions.get('screen');

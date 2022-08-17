@@ -14,6 +14,9 @@ An app made in React Native, that exposes all TV series.
 - [x] handle the search text with debounce
 - [x] request the proper endpoint to get the correct data after searching
 - [x] create component for empty results
+- [x] create show details screen
+- [ ] add episode's list to details screen
+- [ ] create modal for showing episode details
 
 ## Extras
 
@@ -42,3 +45,5 @@ An app made in React Native, that exposes all TV series.
 ## Informative
 
 - Considering that the challange doc's title is "Android challenge", I put all my attention on the Android build. Of course it does work in both platforms, but **maybe** in iOS we could find some minor UI issues.
+
+- I paid attention to the summary field _(into Details screen)_ . Removing its HTML tag fields.
