@@ -38,7 +38,7 @@ const DetailsScreen: React.FC<DetailsProps> = ({ route }) => {
     switch (selectedTab) {
       case 0:
         return (
-          <ScrollView contentContainerStyle={styles.scroll} nestedScrollEnabled>
+          <ScrollView nestedScrollEnabled contentContainerStyle={styles.scroll}>
             <Image
               resizeMode="cover"
               source={{ uri: data?.image.medium ?? data?.image.original }}
@@ -82,12 +82,13 @@ const themedStyles = StyleService.create({
     alignItems: 'center',
   },
   container: {
+    flex: 1,
     width: SCREEN_DIMENSIONS.width,
-    minHeight: SCREEN_DIMENSIONS.height,
     backgroundColor: 'background-basic-color-1',
   },
   scroll: {
     alignItems: 'center',
+    height: 'auto',
   },
   contentContainer: {
     paddingTop: 22,

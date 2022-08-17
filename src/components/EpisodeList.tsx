@@ -1,14 +1,8 @@
-import {
-  List,
-  ListItem,
-  StyleService,
-  Text,
-  useStyleSheet,
-} from '@ui-kitten/components';
+import { Card, StyleService, Text, useStyleSheet } from '@ui-kitten/components';
 import _groupby from 'lodash.groupby';
 import React, { useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
-import { StyleSheet, View } from 'react-native';
 import { Episode } from '../features/episode/model';
 import { SCREEN_DIMENSIONS } from '../helpers';
 
@@ -23,7 +17,7 @@ const EpisodeList: React.FC<EpisodeListProps> = ({ episodes }) => {
   const sections = Object.keys(completeSections);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Accordion
         activeSections={activeSections}
         sections={sections}
@@ -32,31 +26,33 @@ const EpisodeList: React.FC<EpisodeListProps> = ({ episodes }) => {
             <Text>Season {season}</Text>
           </View>
         )}
-        renderContent={season => (
-          <List
-            nestedScrollEnabled
-            data={completeSections[season]}
-            renderItem={({ item }: { item: Episode }) => (
-              <ListItem
-                title={`${item.number} - ${item.name}`}
-                style={styles.episodeRow}
-              />
-            )}
-          />
-        )}
+        // @ts-ignore
+        renderContent={season => {
+          return completeSections[season].map(seasonEpisodes => {
+            return (
+              <Card onPress={() => {}}>
+                <Text>
+                  {seasonEpisodes.number} - {seasonEpisodes.name}
+                </Text>
+              </Card>
+            );
+          });
+        }}
         onChange={(activeIndex: number[]) => {
           setActiveSections(activeIndex);
         }}
       />
-    </View>
+    </ScrollView>
   );
 };
 
 const themedStyles = StyleService.create({
   container: {
+    flex: 1,
     width: SCREEN_DIMENSIONS.width,
     paddingHorizontal: 22,
     paddingTop: 12,
+    paddingBottom: 150,
   },
   headerContainer: {
     paddingVertical: 8,
