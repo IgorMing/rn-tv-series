@@ -4,10 +4,13 @@ import HomeScreen from './screens/Home';
 import DetailsScreen from './screens/Details';
 import { useTheme } from '@ui-kitten/components';
 import { getSearchbarOptions } from './helpers';
+import EpisodeScreen from './screens/Episode';
+import { Episode } from './features/episode/model';
 
 export type StackParamList = {
   Home: undefined;
   Details: { id: number };
+  Episode: { episode: Episode };
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -32,6 +35,7 @@ const Routes: React.FC = () => {
         }}
       />
       <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen name="Episode" component={EpisodeScreen} />
     </Stack.Navigator>
   );
 };

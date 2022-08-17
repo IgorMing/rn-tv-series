@@ -38,7 +38,10 @@ const DetailsScreen: React.FC<DetailsProps> = ({ route }) => {
     switch (selectedTab) {
       case 0:
         return (
-          <ScrollView nestedScrollEnabled contentContainerStyle={styles.scroll}>
+          <ScrollView
+            nestedScrollEnabled
+            contentContainerStyle={styles.scroll}
+            showsVerticalScrollIndicator={false}>
             <Image
               resizeMode="cover"
               source={{ uri: data?.image.medium ?? data?.image.original }}
@@ -50,7 +53,7 @@ const DetailsScreen: React.FC<DetailsProps> = ({ route }) => {
                 label="Year"
                 value={dayjs(data.premiered).format('YYYY')}
               />
-              <InfoRow label="Summary" value={removeHTMLTags(data.summary)} />
+              <InfoRow label="Summary" value={data.summary} removeTags />
               <InfoRow label="Schedule">
                 <Text category="p1">
                   Every {data.schedule.days.join(', ')} at {data.schedule.time}

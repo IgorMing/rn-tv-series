@@ -31,6 +31,13 @@ const useShowDetails = (id: number) => {
     }
   }, [id]);
 
+  const getEpisodeById = useCallback(
+    (episodeId: number): Episode | undefined => {
+      return episodes.find(episode => episode.id === episodeId);
+    },
+    [episodes],
+  );
+
   useEffect(() => {
     fetchEpisodes();
   }, [fetchEpisodes]);
@@ -48,7 +55,7 @@ const useShowDetails = (id: number) => {
     setLoading(false);
   }, [fetch, getShowById, id]);
 
-  return { data: show, loading, episodes };
+  return { data: show, loading, episodes, getEpisodeById };
 };
 
 export { useShowDetails };

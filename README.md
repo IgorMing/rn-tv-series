@@ -16,7 +16,7 @@ An app made in React Native, that exposes all TV series.
 - [x] create component for empty results
 - [x] create show details screen
 - [x] add episode's list to details screen
-- [ ] create modal/new screen for showing episode details
+- [x] create new screen for showing episode details
 
 ## Extras
 
