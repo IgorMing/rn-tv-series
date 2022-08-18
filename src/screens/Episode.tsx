@@ -15,11 +15,13 @@ const EpisodeScreen: React.FC<EpisodeScreenProps> = ({ route }) => {
   return (
     <Layout style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Image
-          resizeMode="contain"
-          source={{ uri: episode.image.medium ?? episode.image.original }}
-          style={styles.image as ImageStyle}
-        />
+        {episode.image && (
+          <Image
+            resizeMode="contain"
+            source={{ uri: episode.image.medium ?? episode.image.original }}
+            style={styles.image as ImageStyle}
+          />
+        )}
         <InfoRow label="Name" value={episode.name} />
         <InfoRow label="Episode number" value={episode.number.toString()} />
         <InfoRow label="Episode season" value={episode.season.toString()} />
